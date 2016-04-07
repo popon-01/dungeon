@@ -1,6 +1,6 @@
 ;;;; package.lisp
 
 (defpackage :dungeon
-  (:use :cl)
+  (:use :cl :split-sequence :iterate :alexandria)
   (:export run))
 

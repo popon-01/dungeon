@@ -192,9 +192,3 @@
 	   (destructuring-bind ,lambda-list ,glis
 	     ,@body)))))
 
-;turn image by vx
-(defun image-turn (obj)
-  (setf (image obj) 
-	(if (plusp (vx obj)) 
-	    (image-r obj)
-	    (image-l obj))))

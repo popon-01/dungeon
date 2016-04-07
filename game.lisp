@@ -6,7 +6,7 @@
   (player nil)
   (camera '(0 0))
   (objects nil)
-  (state :game)
+  (state :title)
   (state-func nil)
   (keystate (make-instance 'game-key)))
 

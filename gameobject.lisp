@@ -13,9 +13,11 @@
     (draw-object obj game)))
 
 (define-class gameobject ()
-  width hight 
-  x y 
-  alive 
+  width height 
+  (x 0 get-x)
+  (y 0 get-y)
+  (vx 0) (vy 0) 
+  (alive t) 
   image 
   (ani-time 0)
   cell-num

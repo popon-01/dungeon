@@ -10,7 +10,7 @@
   (= key 2))
 
 (defmacro defkeystate (name &rest keymaps)
-  (alexandria:with-gensyms (key key-press key-state)
+  (with-gensyms (key key-press key-state)
     `(progn
        (defclass ,name ()
 	  ,(mapcar (lambda (x) `(,(car x) :initform 0)) keymaps))
@@ -24,6 +24,7 @@
 	 (nmapslot (lambda (x) (mod x 2)) ,key-state)))))
 
 (defkeystate game-key
+    (enter :sdl-key-return)
     (right :sdl-key-right)
     (left :sdl-key-left)
     (up :sdl-key-up)
