@@ -7,7 +7,6 @@
     (setf (sdl:frame-rate) 60)
     (load-game-image)
     (let ((game (make-instance 'game)))
-      (init-camera game)
       (sdl:update-display)
       (sdl:with-events ()
 	(:quit-event () t)

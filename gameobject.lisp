@@ -36,15 +36,12 @@
   (with-slots (x y width height image
 		 ani-time cell-num ani-frame) obj
     (let ((nowcell (mod (truncate ani-time ani-frame) cell-num)))
-      (when (or (not (typep obj 'gamecharacter)) 
-		(not (muteki obj))
-		(not (zerop (mod ani-time 3))))
-	  (sdl:draw-surface-at-* image
-				 (- (round (x-in-camera x game)) 
-				    (truncate width 2))
-				 (- (round (y-in-camera y game)) 
-				    (truncate height 2))
-				 :cell nowcell))
+      (sdl:draw-surface-at-* image
+			     (- (round (x-in-camera x game)) 
+				(truncate width 2))
+			     (- (round (y-in-camera y game)) 
+				(truncate height 2))
+			     :cell nowcell)
       (setf (ani-time obj) 
 	    (mod (1+ ani-time) (* cell-num ani-frame 3))))))
 

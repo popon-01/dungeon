@@ -15,6 +15,7 @@
 	       (:file "gameobject")
 	       (:file "player")
 	       (:file "camera")
+	       (:file "map")
                (:file "main"))
   :depends-on (:lispbuilder-sdl :split-sequence :iterate :alexandria :closer-mop))
 
